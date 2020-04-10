@@ -1,0 +1,30 @@
+
+
+CREATE EXTERNAL TABLE Industry (
+industry Id	int,
+industry name string)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LOCATION '/home/cloudera/documents123/Industry'
+
+
+CREATE EXTERNAL TABLE Country (
+country Id int,
+country name string)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LOCATION '/home/cloudera/documents123/Country'
+
+
+
+CREATE EXTERNAL TABLE Division (
+division Id	int,
+division name string)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LOCATION '/home/cloudera/documents123/Division'
+
+
+
+CREATE EXTERNAL TABLE Rating (
+rating Id int,
+rating name	string)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LOCATION '/home/cloudera/documents123/Rating'

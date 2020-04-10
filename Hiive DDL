@@ -1,0 +1,72 @@
+
+CREATE EXTERNAL TABLE Investment_CE (
+cp_id	string,                                       
+cp_name	  string ,                                 
+rating_id	int  ,                                 
+country_id	int,                                   
+industry_id	 int,                                  
+division_id	  int,                                 
+current_exp	 decimal,                              
+exposure1	  decimal  ) 
+partitioned by ( cp_id ,exposure1)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '|'
+STORED AS PARQUET  
+LOCATION '/home/cloudera/documents123/Investment_CE';
+
+
+CREATE EXTERNAL TABLE Investment_PE (
+cp_id	string,                                       
+cp_name	  staring ,                                 
+rating_id	int  ,                                 
+country_id	int,                                   
+industry_id	 int,                                  
+division_id	  int, 
+potential_exp	decimal,
+exposure2	decimal )
+partitioned by ( cp_id ,exposure2)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '|'
+STORED AS PARQUET 
+LOCATION '/home/cloudera/documents123/Investment_PE';
+
+
+CREATE EXTERNAL TABLE PERSONALBANKING_CE
+(
+
+cif_id int,	         
+cif_name string,	 
+cp_id string,	         
+cp_name	string,      
+rating_id int,	     
+country_id	int,     
+industry_id	int,     
+division_id	int,     
+current_exp	decimal, 
+exposure1	decimal  )
+partitioned by ( cif_id,exposure1)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+STORED AS PARQUET 
+LOCATION '/home/cloudera/documents123/PERSONALBANKING_CE'
+TBLPROPERTIES("skip.header.line.count"="1");
+
+CREATE EXTERNAL TABLE PERSONALBANKING_PE
+(
+cif_id int,	         
+cif_name string,	 
+cp_id string,	         
+cp_name	string,      
+rating_id int,	     
+country_id	int,     
+industry_id	int,     
+division_id	int,
+potential_exp	decimal,
+exposure2	decimal)
+partitioned by ( cif_id,exposure2)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+STORED AS PARQUET
+LOCATION '/home/cloudera/documents123/PERSONALBANKING_PE'
+TBLPROPERTIES("skip.header.line.count"="1");
+	
+
+
+
+
